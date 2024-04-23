@@ -35,6 +35,12 @@ open class EmphasisTransformer: InlineTransformer {
     let ch: Character
     let special: Bool
     let factory: (Bool, Text) -> TextFragment
+      
+    public init(ch: Character, special: Bool, factory: @escaping (Bool, Text) -> TextFragment) {
+      self.ch = ch
+      self.special = special
+      self.factory = factory
+    }
   }
   
   /// Emphasis supported by default. Override this property to change the what gets
